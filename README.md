@@ -7,15 +7,15 @@ Ten plik opisuje **dokładnie**, co trzeba zainstalować i jakie komendy wykona�
 
 Żeby uruchomić ten projekt, potrzebujesz:
 
-1. **System operacyjny**
-    - macOS, Linux albo Windows (najlepiej z WSL, ale da się też na „gołym” Windowsie).
+#### 1. **System operacyjny**
+- macOS, Linux albo Windows (najlepiej z WSL, ale da się też na „gołym” Windowsie).
 
-2. **Terminal**
-    - macOS: aplikacja „Terminal” lub iTerm.
-    - Windows: PowerShell / Windows Terminal.
-    - Linux: dowolny terminal.
+#### 2. **Terminal**
+- macOS: aplikacja „Terminal” lub iTerm.
+- Windows: PowerShell / Windows Terminal.
+- Linux: dowolny terminal.
 
-3. **Git**
+#### 3. **Git**
 - Sprawdź, czy jest zainstalowany:
   ```bash
   git --version
@@ -25,7 +25,7 @@ Ten plik opisuje **dokładnie**, co trzeba zainstalować i jakie komendy wykona�
     - Windows: pobierz „Git for Windows”.
     - Linux: np. `sudo apt install git` (Ubuntu/Debian).
 
-4. **Volta (obowiązkowo)**  
+#### 4. **Volta (obowiązkowo)**  
 W tym projekcie **nie instalujemy Node ręcznie** ani przez `nvm`.  
 Wszystko ma dostarczyć **[Volta](https://volta.sh/)**.
 

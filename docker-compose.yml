@@ -1,0 +1,32 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: opencode-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: example-root-password
+      MYSQL_DATABASE: toolbox_db
+      MYSQL_USER: toolbox_user
+      MYSQL_PASSWORD: toolbox_password
+    ports:
+      - '3307:3306'
+    volumes:
+      - ./docker-data/mysql:/var/lib/mysql
+
+  toolbox:
+    image: us-central1-docker.pkg.dev/database-toolbox/toolbox/toolbox:0.21.0
+    container_name: opencode-toolbox
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    ports:
+      - '5010:5000'
+    volumes:
+      - ./toolbox/tools.yaml:/config/tools.yaml:ro
+    command: [
+      "toolbox",
+      "--tools-file", "/config/tools.yaml",
+      "--address", "0.0.0.0"
+    ]

@@ -1,0 +1,40 @@
+sources:
+  my-mysql-source:
+    kind: mysql
+    host: mysql
+    port: 3306
+    database: toolbox_db
+    user: toolbox_user
+    password: toolbox_password
+
+tools:
+  execute_sql:
+    kind: mysql-execute-sql
+    source: my-mysql-source
+    description: >
+      Execute arbitrary SQL against the MySQL database. Use for schema inspection,
+      ad-hoc SELECT queries, INSERT/UPDATE/DELETE, creating tables and indexes.
+      Be careful with destructive operations (DROP, TRUNCATE).
+
+  list_tables:
+    kind: mysql-list-tables
+    source: my-mysql-source
+    description: List all tables in the configured MySQL database.
+
+  get_query_plan:
+    kind: mysql-sql
+    source: my-mysql-source
+    description: Provide information about how MySQL executes a SQL statement.
+    statement: |
+      EXPLAIN FORMAT=JSON {{.sql_statement}};
+    templateParameters:
+      - name: sql_statement
+        type: string
+        description: "The SQL statement to explain"
+        required: true
+
+toolsets:
+  mysql_database_tools:
+    - execute_sql
+    - list_tables
+    - get_query_plan
