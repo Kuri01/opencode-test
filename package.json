@@ -21,5 +21,8 @@
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.4"
   },
-  "packageManager": "yarn@1.22.24"
+  "volta": {
+    "node": "22.21.1",
+    "yarn": "4.12.0"
+  }
 }

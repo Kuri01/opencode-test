@@ -90,3 +90,4 @@ docker-compose.override.yml
 
 # ---- Optional: Local scripts ----
 scripts/local/
+.ezaignore
