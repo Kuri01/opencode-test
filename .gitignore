@@ -91,3 +91,11 @@ docker-compose.override.yml
 # ---- Optional: Local scripts ----
 scripts/local/
 .ezaignore
+
+# ---- Yarn Berry ----
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
